@@ -1,15 +1,18 @@
-@use 'hero';
+@use 'components/variables.scss';
+@use 'components/hero.scss';
+@use 'components/infos.scss';
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto", system-ui;
-    color: #fff;
+    color: variables.$backgroundColor;
+    list-style: none;
 }
 
 .container{
-    max-width: 960px;
+    max-width: 80vw;
     width: 100%;
     margin: 0 auto;
 
@@ -19,5 +22,62 @@
 
     @media(max-width:1024px){
         max-width: 90%;
+    }
+}
+
+@mixin title($fontSize: 45px) {
+    font-size: $fontSize;
+    color: variables.$textColor;
+}
+
+.title{
+    @include title();
+
+    @media (max-width:768px){
+        @include title(25px)
+    }
+}
+
+.title--small{
+    @include title(30px);
+
+    @media (max-width:768px){
+        @include title(20px)
+    }
+}
+
+.title--big{
+    @include title(60px);
+
+    @media (max-width:768px){
+        @include title(30px)
+    }
+}
+
+.horario{
+    font-weight: 100;
+    margin-bottom: 15px;
+    padding: 0 2vw;
+}
+
+@mixin text($fontSize: 38px) {
+    font-size: $fontSize;
+    color: variables.$secondaryTextColor;
+}
+
+.text{
+    @include text();
+
+    @media (max-width:768px){
+        @include text(28px)
+    }
+}
+
+.text--small{
+    @include text(22px);
+    font-weight: 100;
+
+    @media (max-width:768px){
+        @include text(18px)
     }
 }
