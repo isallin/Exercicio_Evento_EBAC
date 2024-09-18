@@ -1,6 +1,7 @@
 {
   "name": "exercicioaula_landingpage",
   "version": "1.0.0",
+  "description":"",
 
   "scripts": {
     "dev": "parcel src/index.html src/styles/main.scss src/scripts/main.js",
